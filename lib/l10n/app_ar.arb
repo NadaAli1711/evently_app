@@ -1,9 +1,18 @@
 {
-"language":"اللغه",
-"english":"الانجليزيه",
-"arabic":"العربيه",
-"logout":"تسجيل الخروج",
-"theme_mode":"النمط",
-"dark":"ليلي",
-"light":"نهاري"
+  "language": "اللغة",
+  "english": "الإنجليزية",
+  "arabic": "العربية",
+  "logout": "تسجيل الخروج",
+  "theme_mode": "وضع المظهر",
+  "dark": "داكن",
+  "light": "فاتح",
+  "login_to_your_account": "تسجيل الدخول إلى حسابك",
+  "enter_your_email": "أدخل بريدك الإلكتروني",
+  "forget_password": "هل نسيت كلمة السر؟",
+  "enter_your_password": "أدخل كلمة المرور",
+  "or": "أو",
+  "login_with_google": "تسجيل الدخول باستخدام جوجل",
+  "don_not_have_an_account": "ليس لديك حساب؟",
+  "signup": "إنشاء حساب",
+  "login":"تسجيل الدخول"
 }

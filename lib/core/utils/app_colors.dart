@@ -9,7 +9,7 @@ class AppColors {
   static const Color white = Color(0xFFFFFFFF) ;
   static const Color secTextDarkMode = Color(0xFFD6D6D6) ;
   static const Color secText = Color(0xFF686868) ;
-  static const Color stroke = Color(0xFFF0F0F0) ;
+  static const Color stroke = Color(0xFFD6D6D6) ;
   static const Color strokeDark = Color(0xFF002D8F) ;
   static const Color inputs = Color(0xFF001440) ;
   static const Color mainDarkMode = Color(0xFF457AED) ;
@@ -18,4 +18,5 @@ class AppColors {
   static const Color gray = Color(0xFFE9EAEB) ;
 
   static const Color transparent = Colors.transparent ;
+  static const Color disable = Color(0xFFB9B9B9) ;
 }

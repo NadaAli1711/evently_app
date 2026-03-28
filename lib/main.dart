@@ -1,6 +1,8 @@
 // import 'package:easy_localization/easy_localization.dart';
+import 'package:evently_app/core/utils/app_routes.dart';
 import 'package:evently_app/providers/language_provider.dart';
 import 'package:evently_app/providers/theme_provider.dart';
+import 'package:evently_app/ui/screens/login_screen.dart';
 import 'package:evently_app/ui/screens/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -47,6 +49,10 @@ class EventlyApp extends StatelessWidget {
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
       themeMode: themeProvider.themeMode,
+      routes: {
+        AppRoutes.loginScreen : (context)=>LoginScreen()
+      },
+      initialRoute: AppRoutes.loginScreen,
     );
   }
 }
