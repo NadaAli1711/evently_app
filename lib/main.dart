@@ -1,0 +1,52 @@
+// import 'package:easy_localization/easy_localization.dart';
+import 'package:evently_app/providers/language_provider.dart';
+import 'package:evently_app/providers/theme_provider.dart';
+import 'package:evently_app/ui/screens/profile_screen.dart';
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import 'core/utils/app_theme.dart';
+import 'l10n/app_localizations.dart';
+
+void main(){
+  // WidgetsFlutterBinding.ensureInitialized();
+  // await EasyLocalization.ensureInitialized();
+
+  runApp(
+
+      MultiProvider(providers: [ChangeNotifierProvider(create: (BuildContext context) => LanguageProvider()),ChangeNotifierProvider(create: (BuildContext context) => ThemeProvider()),],child: EventlyApp())
+    // EasyLocalization(
+    //   supportedLocales: [Locale('en'), Locale('ar')],
+    //   path: 'assets/translations',
+    //   fallbackLocale: Locale('ar'),
+    //   child: ChangeNotifierProvider(
+    //     create: (_) => LanguageProvider(),
+    //     child: EventlyApp(),
+    //   ),
+    // ),
+  );
+}
+
+class EventlyApp extends StatelessWidget {
+   const EventlyApp({super.key});
+
+
+  @override
+  Widget build(BuildContext context) {
+    var languageProvider = Provider.of<LanguageProvider>(context);
+    var themeProvider = Provider.of<ThemeProvider>(context);
+    return MaterialApp(
+      // localizationsDelegates: context.localizationDelegates,
+      // supportedLocales: context.supportedLocales,
+      // locale:context.locale,
+      debugShowCheckedModeBanner: false,
+      home: const ProfileScreen(),
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
+      locale: Locale(languageProvider.languageCode),
+      theme: AppTheme.lightTheme,
+      darkTheme: AppTheme.darkTheme,
+      themeMode: themeProvider.themeMode,
+    );
+  }
+}
