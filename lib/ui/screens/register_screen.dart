@@ -58,7 +58,7 @@ class RegisterScreen extends StatelessWidget {
               SizedBox(height: height * 0.01),
               CustomElevatedButton(
                 onPressed: () {},
-                child: Text(AppLocalizations.of(context)!.login),
+                child: Text(AppLocalizations.of(context)!.signup),
               ),
               Row(
                 mainAxisAlignment: .center,
@@ -77,12 +77,12 @@ class RegisterScreen extends StatelessWidget {
               ),
               Row(
                 children: [
-                  Expanded(child: Divider(endIndent: width * 0.05)),
+                  Expanded(child: Divider(endIndent: width * 0.05,color: Theme.of(context).dividerColor)),
                   Text(
                     AppLocalizations.of(context)!.or,
                     style: Theme.of(context).textTheme.bodyMedium,
                   ),
-                  Expanded(child: Divider(indent: width * 0.05)),
+                  Expanded(child: Divider(indent: width * 0.05,color: Theme.of(context).dividerColor)),
                 ],
               ),
 
