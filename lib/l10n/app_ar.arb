@@ -12,7 +12,12 @@
   "enter_your_password": "أدخل كلمة المرور",
   "or": "أو",
   "login_with_google": "تسجيل الدخول باستخدام جوجل",
-  "don_not_have_an_account": "ليس لديك حساب؟",
+  "do_not_have_an_account": "ليس لديك حساب؟",
   "signup": "إنشاء حساب",
-  "login":"تسجيل الدخول"
+  "login": "تسجيل الدخول",
+  "create_your_account": "إنشاء حسابك الجديد",
+  "enter_your_name": "أدخل اسمك",
+  "confirm_your_password": "تأكيد كلمة المرور",
+  "already_have_an_account": "لديك حساب بالفعل؟",
+  "sign_up_with_Google": "إنشاء حساب باستخدام جوجل"
 }

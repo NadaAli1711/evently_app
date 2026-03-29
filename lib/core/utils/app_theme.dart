@@ -28,9 +28,6 @@ class AppTheme {
      cardColor: AppColors.mainColor,
      dividerColor: AppColors.stroke,
 
-    elevatedButtonTheme: ElevatedButtonThemeData(
-      style: ElevatedButton.styleFrom(textStyle: AppStyles.white20Medium),
-    ),
   );
   static final ThemeData darkTheme = ThemeData(
     scaffoldBackgroundColor: AppColors.bgDarkMode,
@@ -55,8 +52,6 @@ class AppTheme {
     hintColor: AppColors.secTextDarkMode,
      cardColor: AppColors.mainDarkMode,
      dividerColor: AppColors.strokeDark,
-    elevatedButtonTheme: ElevatedButtonThemeData(
-      style: ElevatedButton.styleFrom(textStyle: AppStyles.white20Medium),
-    ),
+
   );
 }

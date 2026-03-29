@@ -14,5 +14,10 @@
 "login_with_google":"Login with Google",
 "do_not_have_an_account":"Don’t have an account ?",
 "signup":"Signup",
-"login":"Login"
+"login":"Login",
+"create_your_account":"Create your account",
+"enter_your_name":"Enter your name",
+"confirm_your_password":"Confirm your password",
+"already_have_an_account":"Already have an account?",
+"sign_up_with_Google":"Sign up with Google"
 }

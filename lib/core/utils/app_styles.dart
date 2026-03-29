@@ -70,6 +70,11 @@ class AppStyles {
     fontSize: 16,
     fontWeight: .w500,
   );
+  static const TextStyle mainDarkModer18Medium = TextStyle(
+    color: AppColors.mainDarkMode,
+    fontSize: 18,
+    fontWeight: .w500,
+  );
   static const TextStyle mainDarkMode14SemiBoldDecorated = TextStyle(
     color: AppColors.mainDarkMode,
     fontSize: 14,

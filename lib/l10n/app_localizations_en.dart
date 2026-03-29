@@ -55,4 +55,19 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get login => 'Login';
+
+  @override
+  String get create_your_account => 'Create your account';
+
+  @override
+  String get enter_your_name => 'Enter your name';
+
+  @override
+  String get confirm_your_password => 'Confirm your password';
+
+  @override
+  String get already_have_an_account => 'Already have an account?';
+
+  @override
+  String get sign_up_with_Google => 'Sign up with Google';
 }
