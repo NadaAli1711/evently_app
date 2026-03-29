@@ -5,5 +5,14 @@
 "logout":"Logout",
 "theme_mode":"Theme mode",
 "dark":"Dark",
-"light":"Light"
+"light":"Light",
+"login_to_your_account":"Login to your account",
+"enter_your_email":"Enter your email",
+"forget_password":"Forget Password?",
+"enter_your_password":"Enter your password",
+"or":"Or",
+"login_with_google":"Login with Google",
+"do_not_have_an_account":"Don’t have an account ?",
+"signup":"Signup",
+"login":"Login"
 }

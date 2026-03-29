@@ -28,4 +28,31 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get light => 'Light';
+
+  @override
+  String get login_to_your_account => 'Login to your account';
+
+  @override
+  String get enter_your_email => 'Enter your email';
+
+  @override
+  String get forget_password => 'Forget Password?';
+
+  @override
+  String get enter_your_password => 'Enter your password';
+
+  @override
+  String get or => 'Or';
+
+  @override
+  String get login_with_google => 'Login with Google';
+
+  @override
+  String get do_not_have_an_account => 'Don’t have an account ?';
+
+  @override
+  String get signup => 'Signup';
+
+  @override
+  String get login => 'Login';
 }
