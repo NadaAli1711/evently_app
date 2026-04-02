@@ -13,4 +13,12 @@ class LanguageProvider extends ChangeNotifier{
     languageCode = newLanguageCode;
     notifyListeners();
   }
+  void toggleLanguage(){
+    if(languageCode == 'en'){
+      languageCode = 'ar';
+    }else if(languageCode == 'ar'){
+      languageCode = 'en';
+    }
+    notifyListeners();
+  }
 }

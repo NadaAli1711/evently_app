@@ -14,7 +14,7 @@ class LanguageListTile extends StatelessWidget {
     var languageProvide = Provider.of<LanguageProvider>(context);
     bool isSelected = languageProvide.languageCode == language;
     return ListTile(
-      title: Text(text,style: isSelected? AppStyles.mainBlue20SemiBold :AppStyles.black20SemiBold,),
+      title: Text(text,style: isSelected? AppStyles.mainBlue20SemiBold :AppStyles.mainText20SemiBold,),
       trailing: Visibility(visible: isSelected, child: Icon(Icons.check, color: AppColors.mainBlue,size: 30,)),
       onTap: () => languageProvide.changeLanguage(language),
     );

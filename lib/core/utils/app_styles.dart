@@ -13,10 +13,15 @@ class AppStyles {
     fontSize: 14,
     fontWeight: .w400,
   );
-  static const TextStyle black20SemiBold = TextStyle(
+  static const TextStyle mainText20SemiBold = TextStyle(
     color: AppColors.mainText,
     fontSize: 20,
     fontWeight: .w600,
+  );
+  static const TextStyle mainText20Medium = TextStyle(
+    color: AppColors.mainText,
+    fontSize: 20,
+    fontWeight: .w500,
   );
   static const TextStyle mainText16Medium = TextStyle(
     color: AppColors.mainText,
@@ -27,6 +32,12 @@ class AppStyles {
     color: AppColors.white,
     fontSize: 16,
     fontWeight: .w500,
+  );
+  static const TextStyle white14SemiBold = TextStyle(
+    color: AppColors.white,
+    fontSize: 14,
+    fontWeight: .w600,
+
   );
   static const TextStyle white24SemiBold = TextStyle(
     color: AppColors.white,
@@ -65,10 +76,20 @@ class AppStyles {
     fontWeight: .w600,
 
   );
-  static const TextStyle mainDarkModer16Medium = TextStyle(
+  static const TextStyle mainDarkMode16Medium = TextStyle(
     color: AppColors.mainDarkMode,
     fontSize: 16,
     fontWeight: .w500,
+  );
+  static const TextStyle mainDarkMode16SemiBold = TextStyle(
+    color: AppColors.mainDarkMode,
+    fontSize: 16,
+    fontWeight: .w600,
+  );
+  static const TextStyle mainColor16SemiBold = TextStyle(
+    color: AppColors.mainColor,
+    fontSize: 16,
+    fontWeight: .w600,
   );
   static const TextStyle mainDarkModer18Medium = TextStyle(
     color: AppColors.mainDarkMode,

@@ -36,16 +36,16 @@ class AppLocalizationsAr extends AppLocalizations {
   String get enter_your_email => 'أدخل بريدك الإلكتروني';
 
   @override
-  String get forget_password => 'هل نسيت كلمة السر؟';
+  String get forget_password => 'نسيت كلمة السر؟';
 
   @override
-  String get enter_your_password => 'أدخل كلمة المرور';
+  String get enter_your_password => 'أدخل كلمة السر';
 
   @override
   String get or => 'أو';
 
   @override
-  String get login_with_google => 'تسجيل الدخول باستخدام جوجل';
+  String get login_with_google => 'تسجيل الدخول بواسطة جوجل';
 
   @override
   String get do_not_have_an_account => 'ليس لديك حساب؟';
@@ -57,17 +57,80 @@ class AppLocalizationsAr extends AppLocalizations {
   String get login => 'تسجيل الدخول';
 
   @override
-  String get create_your_account => 'إنشاء حسابك الجديد';
+  String get create_your_account => 'أنشئ حسابك';
 
   @override
   String get enter_your_name => 'أدخل اسمك';
 
   @override
-  String get confirm_your_password => 'تأكيد كلمة المرور';
+  String get confirm_your_password => 'تأكيد كلمة السر';
 
   @override
   String get already_have_an_account => 'لديك حساب بالفعل؟';
 
   @override
-  String get sign_up_with_Google => 'إنشاء حساب باستخدام جوجل';
+  String get sign_up_with_Google => 'إنشاء حساب بواسطة جوجل';
+
+  @override
+  String get welcome_back => 'مرحباً بعودتك ✨';
+
+  @override
+  String get all => 'الكل';
+
+  @override
+  String get sport => 'رياضة';
+
+  @override
+  String get birthday => 'عيد ميلاد';
+
+  @override
+  String get book_club => 'نادي الكتاب';
+
+  @override
+  String get exhibition => 'معرض';
+
+  @override
+  String get meeting => 'اجتماع';
+
+  @override
+  String get add_event => 'إضافة فعالية';
+
+  @override
+  String get title => 'العنوان';
+
+  @override
+  String get description => 'الوصف';
+
+  @override
+  String get event_title => 'عنوان الفعالية';
+
+  @override
+  String get event_description => 'وصف الفعالية....';
+
+  @override
+  String get event_date => 'تاريخ الفعالية';
+
+  @override
+  String get choose_date => 'اختر التاريخ';
+
+  @override
+  String get event_time => 'وقت الفعالية';
+
+  @override
+  String get choose_time => 'اختر الوقت';
+
+  @override
+  String get event_details => 'تفاصيل الفعالية';
+
+  @override
+  String get update_event => 'تحديث الفعالية';
+
+  @override
+  String get home => 'الرئيسية';
+
+  @override
+  String get profile => 'الملف الشخصي';
+
+  @override
+  String get favorite => 'المفضلة';
 }
