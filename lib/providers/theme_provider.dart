@@ -14,4 +14,13 @@ class ThemeProvider extends ChangeNotifier{
     notifyListeners();
   }
   bool get isDark => themeMode == ThemeMode.dark;
+
+  void toggleTheme(){
+    if(themeMode == ThemeMode.dark){
+      themeMode = ThemeMode.light;
+    }else if(themeMode == ThemeMode.light){
+      themeMode = ThemeMode.dark;
+    }
+    notifyListeners();
+  }
 }

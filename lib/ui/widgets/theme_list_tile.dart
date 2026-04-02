@@ -15,7 +15,7 @@ class ThemeListTile extends StatelessWidget {
     var themeProvider = Provider.of<ThemeProvider>(context);
     bool isSelected = themeProvider.themeMode == theme;
     return ListTile(
-      title: Text(text,style: isSelected? AppStyles.mainBlue20SemiBold :AppStyles.black20SemiBold,),
+      title: Text(text,style: isSelected? AppStyles.mainBlue20SemiBold :AppStyles.mainText20SemiBold,),
       trailing: Visibility(visible: isSelected, child: Icon(Icons.check, color: AppColors.mainBlue,size: 30,)),
       onTap: (){ themeProvider.changeTheme(theme);print("Theme Changed to $theme");}
     );

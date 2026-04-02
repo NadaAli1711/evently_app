@@ -5,17 +5,20 @@ class CustomTextFormField extends StatelessWidget {
   final String hintText;
   final Widget? prefixIcon;
   final Widget? suffixIcon;
+  final Color suffixIconColor;
 
-  const CustomTextFormField({super.key, required this.hintText,this.prefixIcon,this.suffixIcon});
+
+  const CustomTextFormField({super.key, required this.hintText,this.prefixIcon,this.suffixIcon,this.suffixIconColor= AppColors.disable});
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       decoration: InputDecoration(
+        fillColor: Theme.of(context).primaryColor,
         suffixIcon: suffixIcon,
         prefixIcon: prefixIcon,
         prefixIconColor: AppColors.disable,
-        suffixIconColor: AppColors.disable,
+        suffixIconColor: suffixIconColor,
         hintText: hintText,
         hintStyle: Theme.of(context).textTheme.headlineSmall,
         focusedBorder: buildBorder(color: Theme.of(context).dividerColor),

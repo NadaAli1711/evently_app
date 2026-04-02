@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../core/utils/app_context.dart';
+import '../../core/utils/app_routes.dart';
+import '../../core/utils/app_styles.dart';
 import '../../l10n/app_localizations.dart';
 import '../widgets/custom_text_button.dart';
 import '../widgets/custom_text_form_field.dart';
@@ -36,21 +38,28 @@ class LoginScreen extends StatelessWidget {
               CustomElevatedButton(onPressed: (){}, child: Text(AppLocalizations.of(context)!.login)),
               Row(mainAxisAlignment: .center,children: [
                 Text(AppLocalizations.of(context)!.do_not_have_an_account,style: Theme.of(context).textTheme.headlineSmall,),
-                CustomTextButton(onPressed: (){}, text: AppLocalizations.of(context)!.signup),
+                CustomTextButton(onPressed: (){
+                  Navigator.pushReplacementNamed(context, AppRoutes.registerScreen);
+                }, text: AppLocalizations.of(context)!.signup),
 
               ],),
               Row(
                 children: [
-                Expanded(child: Divider(endIndent: width*0.05,)),
+                Expanded(child: Divider(endIndent: width*0.05,color: Theme.of(context).dividerColor)),
                 Text(AppLocalizations.of(context)!.or,style: Theme.of(context).textTheme.bodyMedium,),
-                Expanded(child: Divider(indent: width*0.05,)),
+                Expanded(child: Divider(indent: width*0.05,color: Theme.of(context).dividerColor)),
               ],),
 
-              CustomElevatedButton(onPressed: (){}, child: Row(
+              CustomElevatedButton(
+                  backgroundColor: AppColors.transparent,
+                  textStyle: AppStyles.mainDarkModer18Medium,
+                  borderColor: Theme.of(context).dividerColor,
+                  foregroundColor: Theme.of(context).cardColor,
+                  onPressed: (){}, child: Row(
                 mainAxisAlignment: .center,
                 spacing: width*0.04,
                 children: [
-                  ImageIcon(AssetImage(AppImages.google)),
+                  Image.asset(AppImages.google),
                   Text(AppLocalizations.of(context)!.login_with_google),
                 ],
               )),
