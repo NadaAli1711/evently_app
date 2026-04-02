@@ -29,6 +29,12 @@ class AppImages{
   static const String socialMediaDark = 'assets/images/social_media_dark.png';
   static const String selectedSun = 'assets/images/selected_sun.png';
   static const String selectedMoon = 'assets/images/selected_moon.png';
+  static const String selectedUser = 'assets/images/selected_user_icon.png';
+  static const String unSelectedUser = 'assets/images/unselected_user_icon.png';
+  static const String selectedHome = 'assets/images/selected_home_icon.png';
+  static const String unSelectedHome = 'assets/images/unselected_home_icon.png';
+  static const String unSelectedHeart = 'assets/images/unslected_heart_icon.png';
+  static const String selectedHeart = 'assets/images/selected_heart_icon.png';
 
 
 }

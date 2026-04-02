@@ -1,20 +1,29 @@
+import 'package:evently_app/core/utils/app_assets.dart';
+import 'package:evently_app/core/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 typedef OnTap = void Function(int) ;
-class CustomBottomNavigationBar extends StatelessWidget {
+class CustomBottomNavigationBar extends StatefulWidget {
   final OnTap onTap;
-  const CustomBottomNavigationBar({super.key,required this.onTap});
+  final int selectedIndex;
+  const CustomBottomNavigationBar({super.key,required this.onTap,required this.selectedIndex});
 
+  @override
+  State<CustomBottomNavigationBar> createState() => _CustomBottomNavigationBarState();
+}
+
+class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(items: [
-      buildBottomNavigationBarItem(icon: Icons.home_filled, label: 'Home'),
-      buildBottomNavigationBarItem(icon:Icons.favorite_border_outlined,label: 'Favorite'),
-      buildBottomNavigationBarItem(icon: Icons.person,label: 'profile')
-    ],onTap: onTap);
+      buildBottomNavigationBarItem(index: 0,selectedIcon:AppImages.selectedHome,unSelectedIcon:AppImages.unSelectedHome, label: 'Home'),
+      buildBottomNavigationBarItem(index: 1,selectedIcon:AppImages.selectedHeart,unSelectedIcon:AppImages.unSelectedHeart,label: 'Favorite'),
+      buildBottomNavigationBarItem(index: 2,selectedIcon:AppImages.selectedUser,unSelectedIcon: AppImages.unSelectedUser,label: 'profile')
+    ],onTap: widget.onTap,currentIndex: widget.selectedIndex,selectedItemColor: Theme.of(context).cardColor,unselectedItemColor: AppColors.disable);
   }
+
   BottomNavigationBarItem buildBottomNavigationBarItem(
-      {required IconData icon,required String label}){
-    return BottomNavigationBarItem(icon: Icon(icon),label: label);
+      {required String selectedIcon,required String unSelectedIcon,required String label,required int index}){
+    return BottomNavigationBarItem(icon: ImageIcon(AssetImage(widget.selectedIndex == index?selectedIcon:unSelectedIcon)),label: label);
 
   }
 }

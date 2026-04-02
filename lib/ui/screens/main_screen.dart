@@ -24,7 +24,7 @@ class _ProfileScreenState extends State<MainScreen> {
         selectedIndex = index;
         setState(() {
         });
-      },),
+      },selectedIndex: selectedIndex,),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 32, horizontal: 16),
