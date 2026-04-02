@@ -3,7 +3,7 @@ import 'package:evently_app/l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 import '../../core/utils/app_context.dart';
 import '../widgets/custom_text_form_field.dart';
-import '../widgets/vertical_list_view.dart';
+import '../widgets/list_views/vertical_list_view.dart';
 
 class FavoriteTab extends StatelessWidget {
   const FavoriteTab({super.key});

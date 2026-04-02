@@ -1,7 +1,7 @@
 import 'package:evently_app/core/utils/app_assets.dart';
 import 'package:evently_app/core/utils/app_colors.dart';
 import 'package:evently_app/providers/theme_provider.dart';
-import 'package:evently_app/ui/widgets/custom_elevated_button.dart';
+import 'package:evently_app/ui/widgets/buttons/custom_elevated_button.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -9,7 +9,7 @@ import '../../core/utils/app_context.dart';
 import '../../core/utils/app_routes.dart';
 import '../../core/utils/app_styles.dart';
 import '../../l10n/app_localizations.dart';
-import '../widgets/custom_text_button.dart';
+import '../widgets/buttons/custom_text_button.dart';
 import '../widgets/custom_text_form_field.dart';
 
 class LoginScreen extends StatelessWidget {

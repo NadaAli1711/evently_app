@@ -1,11 +1,11 @@
 import 'package:evently_app/core/utils/app_assets.dart';
 import 'package:evently_app/core/utils/app_colors.dart';
 import 'package:evently_app/core/utils/app_styles.dart';
-import 'package:evently_app/ui/widgets/tapped_container.dart';
+import 'package:evently_app/ui/widgets/containers/tapped_container.dart';
 import 'package:flutter/material.dart';
 
-import '../../core/utils/app_context.dart';
-import '../../l10n/app_localizations.dart';
+import '../../../core/utils/app_context.dart';
+import '../../../l10n/app_localizations.dart';
 
 class HorizontalListView extends StatefulWidget {
 

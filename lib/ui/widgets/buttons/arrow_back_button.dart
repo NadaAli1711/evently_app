@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-class ArrowBack extends StatelessWidget {
+class ArrowBackButton extends StatelessWidget {
   final VoidCallback onPressed;
-  const ArrowBack({super.key,required this.onPressed});
+  const ArrowBackButton({super.key,required this.onPressed});
 
   @override
   Widget build(BuildContext context) {

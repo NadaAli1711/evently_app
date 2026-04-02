@@ -5,8 +5,8 @@ import '../../core/utils/app_colors.dart';
 import '../../core/utils/app_context.dart';
 import '../../l10n/app_localizations.dart';
 import '../../providers/theme_provider.dart';
-import '../widgets/language_bottom_sheet.dart';
-import '../widgets/profile_list_tile.dart';
+import '../widgets/language_bottom_sheet/language_bottom_sheet.dart';
+import '../widgets/switch/profile_switch.dart';
 
 class ProfileTab extends StatefulWidget {
   const ProfileTab({super.key});
@@ -19,10 +19,9 @@ class _ProfileTabState extends State<ProfileTab> {
   @override
   Widget build(BuildContext context) {
     double height = context.height;
-    double width = context.width;
     var themeProvider = Provider.of<ThemeProvider>(context);
     return Column(
-      spacing: height*0.02,
+      spacing: height * 0.02,
       children: [
         CircleAvatar(
           backgroundImage: AssetImage(AppImages.profileImg),
@@ -33,33 +32,21 @@ class _ProfileTabState extends State<ProfileTab> {
           'johnsafwat.route@gmail.com',
           style: Theme.of(context).textTheme.headlineSmall,
         ),
-        SizedBox(height: height*0.02),
-        ProfileListTile(
-          text: AppLocalizations.of(context)!.theme_mode,
-          child:
-              // IconButton(
-              //   onPressed: () {
-              //     showThemeBottomModalSheet();
-              //   },
-              //   icon: Icon(Icons.arrow_forward_ios_rounded),
-              // ),
-              Switch(
-                value: themeProvider.isDark,
-                onChanged: (value) => themeProvider.changeTheme(
-                  value ? ThemeMode.dark : ThemeMode.light,
-                ),
-                activeTrackColor: AppColors.mainDarkMode,
-                inactiveTrackColor: AppColors.gray,
-                inactiveThumbColor: AppColors.white,
-                trackOutlineColor: WidgetStateProperty.all(
-                  AppColors.transparent,
-                ),
-              ),
+        SizedBox(height: height * 0.02),
+        ListTile(
+          title: Text(
+            AppLocalizations.of(context)!.theme_mode,
+            style: Theme.of(context).textTheme.titleMedium,
+          ),
+          trailing: ProfileSwitch(),
         ),
 
-        ProfileListTile(
-          text: AppLocalizations.of(context)!.language,
-          child: IconButton(
+        ListTile(
+          title: Text(
+            AppLocalizations.of(context)!.language,
+            style: Theme.of(context).textTheme.titleMedium,
+          ),
+          trailing: IconButton(
             onPressed: () {
               showBottomModalSheet();
             },
@@ -71,9 +58,12 @@ class _ProfileTabState extends State<ProfileTab> {
             ),
           ),
         ),
-        ProfileListTile(
-          text: AppLocalizations.of(context)!.logout,
-          child: IconButton(
+        ListTile(
+          title: Text(
+            AppLocalizations.of(context)!.logout,
+            style: Theme.of(context).textTheme.titleMedium,
+          ),
+          trailing: IconButton(
             onPressed: () {},
             icon: Icon(Icons.logout_rounded, color: AppColors.red),
           ),
@@ -89,8 +79,4 @@ class _ProfileTabState extends State<ProfileTab> {
       builder: (context) => LanguageBottomSheet(),
     );
   }
-
-  // void showThemeBottomModalSheet() {
-  //   showModalBottomSheet(context: context, builder: (context)=>ThemeBottomSheet());
-  // }
 }

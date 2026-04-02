@@ -3,8 +3,8 @@ import 'package:evently_app/core/utils/app_context.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../providers/theme_provider.dart';
-import 'custom_container.dart';
+import '../../../providers/theme_provider.dart';
+import '../containers/custom_container.dart';
 
 class VerticalListView extends StatefulWidget {
   final List<String> darkImagesList = [
@@ -46,25 +46,21 @@ class _VerticalListViewState extends State<VerticalListView> {
     double width = context.width;
     var themeProvider = Provider.of<ThemeProvider>(context);
     return ListView.separated(
-      itemBuilder: (context, index) => Container(
-        height: height * 0.23,
-        padding: EdgeInsets.symmetric(
-          vertical: height * 0.02,
-          horizontal: width * 0.02,
-        ),
-        clipBehavior: .antiAlias,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(16),
-          border: BoxBorder.all(color: Theme.of(context).dividerColor),
-          image: DecorationImage(
-            image: AssetImage(
-              themeProvider.isDark
-                  ? widget.darkImagesList[index]
-                  : widget.lightImagesList[index],
-            ),
-            fit: BoxFit.fill,
+      itemBuilder: (context, index) =>
+      CustomContainer(
+        image: DecorationImage(
+          image: AssetImage(
+            themeProvider.isDark
+                ? widget.darkImagesList[index]
+                : widget.lightImagesList[index],
           ),
+          fit: BoxFit.fill,
         ),
+        hasBackgroundImage: true,
+        borderRadius: 16,
+        horizontalPadding:  width * 0.02,
+        verticalPadding:  height * 0.02,
+        containerHeight: height * 0.23,
         child: Column(
           mainAxisAlignment: .spaceBetween,
           crossAxisAlignment: .start,
@@ -103,6 +99,7 @@ class _VerticalListViewState extends State<VerticalListView> {
           ],
         ),
       ),
+
       separatorBuilder: (context, index) => SizedBox(height: height * 0.02),
       itemCount: widget.darkImagesList.length,
     );

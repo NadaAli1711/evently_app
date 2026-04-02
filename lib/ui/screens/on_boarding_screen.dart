@@ -1,12 +1,12 @@
 import 'package:evently_app/core/utils/app_context.dart';
 import 'package:evently_app/l10n/app_localizations.dart';
 import 'package:evently_app/providers/theme_provider.dart';
-import 'package:evently_app/ui/widgets/tapped_container.dart';
+import 'package:evently_app/ui/widgets/containers/tapped_container.dart';
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:provider/provider.dart';
 import '../../core/utils/app_assets.dart';
-import '../widgets/arrow_back.dart';
+import '../widgets/buttons/arrow_back_button.dart';
 import '../widgets/introduction_body.dart';
 import 'main_screen.dart';
 
@@ -64,7 +64,7 @@ class OnBoardingPageState extends State<OnBoardingScreen> {
             mainAxisAlignment: .spaceBetween,
             children: [
               _currentPage != 0
-                  ? ArrowBack(onPressed: _toPreviousPage,)
+                  ? ArrowBackButton(onPressed: _toPreviousPage,)
                   : const SizedBox(width: 48),
               Image.asset(
                 themeProvider.isDark
