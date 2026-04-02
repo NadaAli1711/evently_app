@@ -349,6 +349,88 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Favorite'**
   String get favorite;
+
+  /// No description provided for @personalize_your_experience.
+  ///
+  /// In en, this message translates to:
+  /// **'Personalize Your Experience'**
+  String get personalize_your_experience;
+
+  /// No description provided for @choose_your_preferred_theme_and_language_to_get_started_with_a_comfortable_tailored_experience_that_suits_your_style.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose your preferred theme and language to get started with a comfortable, tailored experience that suits your style.'**
+  String
+  get choose_your_preferred_theme_and_language_to_get_started_with_a_comfortable_tailored_experience_that_suits_your_style;
+
+  /// No description provided for @find_events_that_inspire_you.
+  ///
+  /// In en, this message translates to:
+  /// **'Find Events That Inspire You'**
+  String get find_events_that_inspire_you;
+
+  /// No description provided for @dive_into_a_world_of_events_crafted_to_fit_your_unique_interests_whether_youre_into_live_music_art_workshops_professional_networking_or_simply_discovering_new_experiences_we_have_something_for_everyone_our_curated_recommendations_will_help_you_explore_connect_and_make_the_most_of_every_opportunity_around_you.
+  ///
+  /// In en, this message translates to:
+  /// **'Dive into a world of events crafted to fit your unique interests. Whether you\'re into live music, art workshops, professional networking, or simply discovering new experiences, we have something for everyone. Our curated recommendations will help you explore, connect, and make the most of every opportunity around you.'**
+  String
+  get dive_into_a_world_of_events_crafted_to_fit_your_unique_interests_whether_youre_into_live_music_art_workshops_professional_networking_or_simply_discovering_new_experiences_we_have_something_for_everyone_our_curated_recommendations_will_help_you_explore_connect_and_make_the_most_of_every_opportunity_around_you;
+
+  /// No description provided for @effortless_event_planning.
+  ///
+  /// In en, this message translates to:
+  /// **'Effortless Event Planning'**
+  String get effortless_event_planning;
+
+  /// No description provided for @take_the_hassle_out_of_organizing_events_with_our_all_in_one_planning_tools_from_setting_up_invites_and_managing_rsvps_to_scheduling_reminders_and_coordinating_details_we_ve_got_you_covered_plan_with_ease_and_focus_on_what_matters_creating_an_unforgettable_experience_for_you_and_your_guests.
+  ///
+  /// In en, this message translates to:
+  /// **'Take the hassle out of organizing events with our all-in-one planning tools. From setting up invites and managing RSVPs to scheduling reminders and coordinating details, we’ve got you covered. Plan with ease and focus on what matters – creating an unforgettable experience for you and your guests.'**
+  String
+  get take_the_hassle_out_of_organizing_events_with_our_all_in_one_planning_tools_from_setting_up_invites_and_managing_rsvps_to_scheduling_reminders_and_coordinating_details_we_ve_got_you_covered_plan_with_ease_and_focus_on_what_matters_creating_an_unforgettable_experience_for_you_and_your_guests;
+
+  /// No description provided for @connect_with_friends_share_moments.
+  ///
+  /// In en, this message translates to:
+  /// **'Connect with Friends & Share Moments'**
+  String get connect_with_friends_share_moments;
+
+  /// No description provided for @make_every_event_memorable_by_sharing_the_experience_with_others_our_platform_lets_you_invite_friends_keep_everyone_in_the_loop_and_celebrate_moments_together_capture_and_share_the_excitement_with_your_network_so_you_can_relive_the_highlights_and_cherish_the_memories.
+  ///
+  /// In en, this message translates to:
+  /// **'Make every event memorable by sharing the experience with others. Our platform lets you invite friends, keep everyone in the loop, and celebrate moments together. Capture and share the excitement with your network, so you can relive the highlights and cherish the memories.'**
+  String
+  get make_every_event_memorable_by_sharing_the_experience_with_others_our_platform_lets_you_invite_friends_keep_everyone_in_the_loop_and_celebrate_moments_together_capture_and_share_the_excitement_with_your_network_so_you_can_relive_the_highlights_and_cherish_the_memories;
+
+  /// No description provided for @let_s_start.
+  ///
+  /// In en, this message translates to:
+  /// **'Let’s start'**
+  String get let_s_start;
+
+  /// No description provided for @next.
+  ///
+  /// In en, this message translates to:
+  /// **'Next'**
+  String get next;
+
+  /// No description provided for @theme.
+  ///
+  /// In en, this message translates to:
+  /// **'Theme'**
+  String get theme;
+
+  /// No description provided for @skip.
+  ///
+  /// In en, this message translates to:
+  /// **'Skip'**
+  String get skip;
+
+  /// No description provided for @get_started.
+  ///
+  /// In en, this message translates to:
+  /// **'Get started'**
+  String get get_started;
 }
 
 class _AppLocalizationsDelegate

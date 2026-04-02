@@ -2,8 +2,10 @@
 import 'package:evently_app/core/utils/app_routes.dart';
 import 'package:evently_app/providers/language_provider.dart';
 import 'package:evently_app/providers/theme_provider.dart';
+import 'package:evently_app/ui/screens/intro_screen.dart';
 import 'package:evently_app/ui/screens/login_screen.dart';
 import 'package:evently_app/ui/screens/main_screen.dart';
+import 'package:evently_app/ui/screens/on_boarding_screen.dart';
 import 'package:evently_app/ui/screens/register_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -49,11 +51,13 @@ class EventlyApp extends StatelessWidget {
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
       themeMode: themeProvider.themeMode,
-      initialRoute: AppRoutes.mainScreen,
+      initialRoute: AppRoutes.introScreen,
       routes: {
         AppRoutes.loginScreen : (context)=>LoginScreen(),
         AppRoutes.registerScreen : (context)=>RegisterScreen(),
         AppRoutes.mainScreen : (context)=>MainScreen(),
+        AppRoutes.onBoardingScreen : (context)=>OnBoardingScreen(),
+        AppRoutes.introScreen : (context)=>IntroScreen(),
       },
 
     );

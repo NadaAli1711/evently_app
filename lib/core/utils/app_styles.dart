@@ -8,9 +8,19 @@ class AppStyles {
     fontSize: 14,
     fontWeight: .w400,
   );
+  static const TextStyle secText16Regular = TextStyle(
+    color: AppColors.secText,
+    fontSize: 16,
+    fontWeight: .w400,
+  );
   static const TextStyle secTextDarkMode14Regular = TextStyle(
     color: AppColors.secTextDarkMode,
     fontSize: 14,
+    fontWeight: .w400,
+  );
+  static const TextStyle secTextDarkMode16Regular = TextStyle(
+    color: AppColors.secTextDarkMode,
+    fontSize: 16,
     fontWeight: .w400,
   );
   static const TextStyle mainText20SemiBold = TextStyle(
