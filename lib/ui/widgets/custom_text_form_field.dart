@@ -6,9 +6,8 @@ class CustomTextFormField extends StatelessWidget {
   final Widget? prefixIcon;
   final Widget? suffixIcon;
   final Color suffixIconColor;
-
-
-  const CustomTextFormField({super.key, required this.hintText,this.prefixIcon,this.suffixIcon,this.suffixIconColor= AppColors.disable});
+  final Color prefixIconColor;
+  const CustomTextFormField({super.key, required this.hintText,this.prefixIcon,this.suffixIcon,this.suffixIconColor= AppColors.disable,this.prefixIconColor= AppColors.disable});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +16,7 @@ class CustomTextFormField extends StatelessWidget {
         fillColor: Theme.of(context).primaryColor,
         suffixIcon: suffixIcon,
         prefixIcon: prefixIcon,
-        prefixIconColor: AppColors.disable,
+        prefixIconColor: prefixIconColor,
         suffixIconColor: suffixIconColor,
         hintText: hintText,
         hintStyle: Theme.of(context).textTheme.headlineSmall,

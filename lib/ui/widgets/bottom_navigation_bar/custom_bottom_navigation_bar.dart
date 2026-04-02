@@ -2,7 +2,7 @@ import 'package:evently_app/core/utils/app_assets.dart';
 import 'package:evently_app/core/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 
-import '../../l10n/app_localizations.dart';
+import '../../../l10n/app_localizations.dart';
 typedef OnTap = void Function(int) ;
 class CustomBottomNavigationBar extends StatefulWidget {
   final OnTap onTap;

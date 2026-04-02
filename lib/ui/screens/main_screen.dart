@@ -1,7 +1,7 @@
 import 'package:evently_app/ui/tabs/profile_tab.dart';
 import 'package:flutter/material.dart';
-import '../widgets/custom_bottom_navigation_bar.dart';
-import '../widgets/custom_floating_action_button.dart';
+import '../widgets/bottom_navigation_bar/custom_bottom_navigation_bar.dart';
+import '../widgets/buttons/custom_floating_action_button.dart';
 import '../tabs/favorite_tab.dart';
 import '../tabs/home_tab.dart';
 

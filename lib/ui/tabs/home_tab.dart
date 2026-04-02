@@ -7,8 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../core/utils/app_context.dart';
-import '../widgets/horizontal_list_view.dart';
-import '../widgets/vertical_list_view.dart';
+import '../widgets/list_views/horizontal_list_view.dart';
+import '../widgets/list_views/vertical_list_view.dart';
 
 class HomeTab extends StatelessWidget {
   const HomeTab({super.key});

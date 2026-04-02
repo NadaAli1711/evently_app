@@ -1,4 +1,4 @@
-import 'package:evently_app/ui/widgets/tapped_container.dart';
+import 'package:evently_app/ui/widgets/containers/tapped_container.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -8,7 +8,7 @@ import '../../core/utils/app_context.dart';
 import '../../l10n/app_localizations.dart';
 import '../../providers/language_provider.dart';
 import '../../providers/theme_provider.dart';
-import 'custom_elevated_button.dart';
+import 'buttons/custom_elevated_button.dart';
 
 class IntroductionBody extends StatelessWidget {
   final String lightAssetName;
