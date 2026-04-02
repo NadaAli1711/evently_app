@@ -85,6 +85,7 @@ class _ProfileTabState extends State<ProfileTab> {
   void showBottomModalSheet() {
     showModalBottomSheet(
       context: context,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       builder: (context) => LanguageBottomSheet(),
     );
   }
