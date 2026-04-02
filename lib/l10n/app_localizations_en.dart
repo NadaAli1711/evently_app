@@ -180,5 +180,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get skip => 'Skip';
 
   @override
+  String get search_for_event => 'Search for event';
+
+  @override
   String get get_started => 'Get started';
 }

@@ -180,5 +180,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get skip => 'تخطي';
 
   @override
+  String get search_for_event => 'البحث عن فعالية';
+
+  @override
   String get get_started => 'ابدأ الآن';
 }

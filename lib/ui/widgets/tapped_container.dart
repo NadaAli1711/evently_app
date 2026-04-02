@@ -48,7 +48,7 @@ class TappedContainer extends StatelessWidget {
         child: Row(
           spacing: width * 0.02,
           children: [
-            if (hasIcon) ImageIcon(AssetImage(iconName),color: iconColor?? Theme.of(context).cardColor,),
+            if (hasIcon) ImageIcon(AssetImage(iconName),color:  isSelected?AppColors.white:Theme.of(context).cardColor,),
             if (hasText)
               Text(
                 text,

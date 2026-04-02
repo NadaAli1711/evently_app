@@ -1,6 +1,8 @@
 import 'package:evently_app/core/utils/app_assets.dart';
 import 'package:evently_app/core/utils/app_colors.dart';
 import 'package:flutter/material.dart';
+
+import '../../l10n/app_localizations.dart';
 typedef OnTap = void Function(int) ;
 class CustomBottomNavigationBar extends StatefulWidget {
   final OnTap onTap;
@@ -15,9 +17,9 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(items: [
-      buildBottomNavigationBarItem(index: 0,selectedIcon:AppImages.selectedHome,unSelectedIcon:AppImages.unSelectedHome, label: 'Home'),
-      buildBottomNavigationBarItem(index: 1,selectedIcon:AppImages.selectedHeart,unSelectedIcon:AppImages.unSelectedHeart,label: 'Favorite'),
-      buildBottomNavigationBarItem(index: 2,selectedIcon:AppImages.selectedUser,unSelectedIcon: AppImages.unSelectedUser,label: 'profile')
+      buildBottomNavigationBarItem(index: 0,selectedIcon:AppImages.selectedHome,unSelectedIcon:AppImages.unSelectedHome, label: AppLocalizations.of(context)!.home),
+      buildBottomNavigationBarItem(index: 1,selectedIcon:AppImages.selectedHeart,unSelectedIcon:AppImages.unSelectedHeart,label:  AppLocalizations.of(context)!.favorite),
+      buildBottomNavigationBarItem(index: 2,selectedIcon:AppImages.selectedUser,unSelectedIcon: AppImages.unSelectedUser,label:  AppLocalizations.of(context)!.profile)
     ],onTap: widget.onTap,currentIndex: widget.selectedIndex,selectedItemColor: Theme.of(context).cardColor,unselectedItemColor: AppColors.disable);
   }
 
