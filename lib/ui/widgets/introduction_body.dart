@@ -1,3 +1,5 @@
+import 'package:easy_localization/easy_localization.dart';
+import 'package:evently_app/core/utils/language_utils.dart';
 import 'package:evently_app/ui/widgets/containers/tapped_container.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
@@ -36,7 +38,6 @@ class IntroductionBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var themeProvider = Provider.of<ThemeProvider>(context);
-    var languageProvider = Provider.of<LanguageProvider>(context);
     double width = context.width;
     double height = context.height;
     return Column(
@@ -73,22 +74,19 @@ class IntroductionBody extends StatelessWidget {
           Row(
             spacing: width * 0.02,
             children: [
-              Text(AppLocalizations.of(context)!.language),
+              Text('language'.tr()),
               Spacer(),
               TappedContainer(
-                onTap: () {
-                  languageProvider.toggleLanguage();
-                },
-                isSelected: languageProvider.isEnglish,
-                text: AppLocalizations.of(context)!.english,
+                onTap:() => LanguageUtils.toggleLanguage(context),
+                isSelected: LanguageUtils.isEnglish(context),
+                text: 'english'.tr(),
                 hasIcon: false,
               ),
               TappedContainer(
-                onTap: () {
-                  languageProvider.toggleLanguage();
-                },
-                isSelected: !languageProvider.isEnglish,
-                text: AppLocalizations.of(context)!.arabic,
+                onTap:
+                      () => LanguageUtils.toggleLanguage(context),
+                isSelected: !LanguageUtils.isEnglish(context),
+                text: 'arabic'.tr(),
                 hasIcon: false,
               ),
             ],
@@ -96,7 +94,7 @@ class IntroductionBody extends StatelessWidget {
           Row(
             spacing: width * 0.02,
             children: [
-              Text(AppLocalizations.of(context)!.theme_mode),
+              Text('theme_mode'.tr()),
               Spacer(),
               TappedContainer(
                 onTap: () {

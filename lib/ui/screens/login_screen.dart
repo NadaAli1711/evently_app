@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:evently_app/core/utils/app_assets.dart';
 import 'package:evently_app/core/utils/app_colors.dart';
 import 'package:evently_app/providers/theme_provider.dart';
@@ -8,8 +9,8 @@ import 'package:provider/provider.dart';
 import '../../core/utils/app_context.dart';
 import '../../core/utils/app_routes.dart';
 import '../../core/utils/app_styles.dart';
-import '../../l10n/app_localizations.dart';
 import '../widgets/buttons/custom_text_button.dart';
+import '../widgets/custom_rows/or_divider.dart';
 import '../widgets/custom_text_form_field.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -29,27 +30,21 @@ class LoginScreen extends StatelessWidget {
             spacing: height*0.02,
             children: [
               themeProvider.isDark? Image.asset(AppImages.eventlyDarkLogo): Image.asset(AppImages.eventlyLogo),
-              Text(AppLocalizations.of(context)!.login_to_your_account,style: Theme.of(context).textTheme.headlineLarge,),
+              Text('login_to_your_account'.tr(),style: Theme.of(context).textTheme.headlineLarge,),
               SizedBox(height: height*0.002,),
-              CustomTextFormField(hintText: AppLocalizations.of(context)!.enter_your_email,prefixIcon: Icon(Icons.email_outlined),),
-              CustomTextFormField(hintText: AppLocalizations.of(context)!.enter_your_password,prefixIcon: Icon(Icons.lock_outline),suffixIcon: Icon(Icons.visibility_off),),
-              Align(alignment: .centerRight,child: CustomTextButton(text: AppLocalizations.of(context)!.forget_password,onPressed: (){Navigator.of(context).pushNamed(AppRoutes.forgetPasswordScreen);},)),
+              CustomTextFormField(hintText: 'enter_your_email'.tr(),prefixIcon: Icon(Icons.email_outlined),),
+              CustomTextFormField(hintText: 'enter_your_password'.tr(),prefixIcon: Icon(Icons.lock_outline),suffixIcon: Icon(Icons.visibility_off),),
+              Align(alignment: .centerRight,child: CustomTextButton(text: 'forget_password'.tr(),onPressed: (){Navigator.of(context).pushNamed(AppRoutes.forgetPasswordScreen);},)),
               SizedBox(height: height*0.01,),
-              CustomElevatedButton(onPressed: (){}, child: Text(AppLocalizations.of(context)!.login)),
+              CustomElevatedButton(onPressed: (){}, child: Text('login'.tr())),
               Row(mainAxisAlignment: .center,children: [
-                Text(AppLocalizations.of(context)!.do_not_have_an_account,style: Theme.of(context).textTheme.headlineSmall,),
+                Text('do_not_have_an_account'.tr(),style: Theme.of(context).textTheme.headlineSmall,),
                 CustomTextButton(onPressed: (){
                   Navigator.pushReplacementNamed(context, AppRoutes.registerScreen);
-                }, text: AppLocalizations.of(context)!.signup),
+                }, text: 'signup'.tr()),
 
               ],),
-              Row(
-                children: [
-                Expanded(child: Divider(endIndent: width*0.05,color: Theme.of(context).dividerColor)),
-                Text(AppLocalizations.of(context)!.or,style: Theme.of(context).textTheme.bodyMedium,),
-                Expanded(child: Divider(indent: width*0.05,color: Theme.of(context).dividerColor)),
-              ],),
-
+              OrDivider(),
               CustomElevatedButton(
                   backgroundColor: AppColors.transparent,
                   textStyle: AppStyles.mainDarkModer18Medium,
@@ -60,7 +55,7 @@ class LoginScreen extends StatelessWidget {
                 spacing: width*0.04,
                 children: [
                   Image.asset(AppImages.google),
-                  Text(AppLocalizations.of(context)!.login_with_google),
+                  Text('login_with_google'.tr()),
                 ],
               )),
 

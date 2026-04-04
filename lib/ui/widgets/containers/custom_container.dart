@@ -4,14 +4,22 @@ import '../../../core/utils/app_context.dart';
 
 class CustomContainer extends StatelessWidget {
   final double containerHeight;
-  final Widget child;
-  final DecorationImage? image;
+  final Widget? child;
+  final String image;
   final double? verticalPadding;
   final double? horizontalPadding;
   final double borderRadius;
   final bool hasBackgroundImage;
-  const CustomContainer({super.key,required this.containerHeight,required this.child,this.verticalPadding
-    ,this.horizontalPadding,this.borderRadius=8,this.hasBackgroundImage = false,this.image});
+  const CustomContainer({
+    super.key,
+    required this.containerHeight,
+    this.child,
+    this.verticalPadding,
+    this.horizontalPadding,
+    this.borderRadius = 8,
+    this.hasBackgroundImage = false,
+    this.image='',
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -19,16 +27,23 @@ class CustomContainer extends StatelessWidget {
     double width = context.width;
     return Container(
       height: containerHeight,
-      padding: EdgeInsets.symmetric(vertical: verticalPadding??height*0.01, horizontal: horizontalPadding??width*0.03), clipBehavior: .antiAlias,
+      padding: EdgeInsets.symmetric(
+        vertical: verticalPadding ?? height * 0.01,
+        horizontal: horizontalPadding ?? width * 0.03,
+      ),
+      clipBehavior: .antiAlias,
       decoration: BoxDecoration(
         color: Theme.of(context).scaffoldBackgroundColor,
         borderRadius: BorderRadius.circular(borderRadius),
-        border: BoxBorder.all(
-          color:Theme.of(context).dividerColor,
-        ),
-        image: hasBackgroundImage? image :null,
+        border: BoxBorder.all(color: Theme.of(context).dividerColor),
+        image: hasBackgroundImage ? DecorationImage(
+          image: AssetImage(
+            image
+          ),
+          fit: BoxFit.fill,
+        ) : null,
       ),
-      child: child
+      child: child,
     );
   }
 }

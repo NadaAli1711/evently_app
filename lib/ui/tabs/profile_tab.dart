@@ -37,7 +37,6 @@ class _ProfileTabState extends State<ProfileTab> {
         ListTile(
           title: Text(
             'theme_mode'.tr(),
-            // AppLocalizations.of(context)!.theme_mode,
             style: Theme.of(context).textTheme.titleMedium,
           ),
           trailing: ProfileSwitch(),
@@ -45,7 +44,6 @@ class _ProfileTabState extends State<ProfileTab> {
 
         ListTile(
           title: Text(
-            // AppLocalizations.of(context)!.language,
             'language'.tr(),
             style: Theme.of(context).textTheme.titleMedium,
           ),
@@ -63,7 +61,6 @@ class _ProfileTabState extends State<ProfileTab> {
         ),
         ListTile(
           title: Text(
-            // AppLocalizations.of(context)!.logout,
             'logout'.tr(),
             style: Theme.of(context).textTheme.titleMedium,
           ),

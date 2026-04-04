@@ -1,7 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-// import 'package:provider/provider.dart';
-// import '../../../providers/language_provider.dart';
+
 
 class LanguageListTile extends StatelessWidget {
   final String language;
@@ -16,8 +15,7 @@ class LanguageListTile extends StatelessWidget {
     return ListTile(
       title: Text(text,style: isSelected? Theme.of(context).textTheme.headlineMedium :Theme.of(context).textTheme.titleLarge,),
       trailing: Visibility(visible: isSelected, child: Icon(Icons.check, color:  Theme.of(context).focusColor,size: 30,)),
-      // onTap: () => languageProvide.changeLanguage(language),
-        onTap: ()async { await context.setLocale(Locale(language));}
+        onTap: () async { await context.setLocale(Locale(language));}
     );
   }
 }

@@ -7,11 +7,25 @@ class CustomTextFormField extends StatelessWidget {
   final Widget? suffixIcon;
   final Color suffixIconColor;
   final Color prefixIconColor;
-  const CustomTextFormField({super.key, required this.hintText,this.prefixIcon,this.suffixIcon,this.suffixIconColor= AppColors.disable,this.prefixIconColor= AppColors.disable});
+  final int? minLines;
+  final int? maxLines;
+  const CustomTextFormField({
+    super.key,
+    required this.hintText,
+    this.prefixIcon,
+    this.suffixIcon,
+    this.suffixIconColor = AppColors.disable,
+    this.prefixIconColor = AppColors.disable,
+    this.minLines,
+    this.maxLines,
+  });
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      minLines: minLines,
+      maxLines:
+          null, // to expand as you like and prevent the error when min lines is larger than the default of max lines which is 1 so null is larger than any value
       decoration: InputDecoration(
         fillColor: Theme.of(context).primaryColor,
         suffixIcon: suffixIcon,
@@ -19,6 +33,7 @@ class CustomTextFormField extends StatelessWidget {
         prefixIconColor: prefixIconColor,
         suffixIconColor: suffixIconColor,
         hintText: hintText,
+
         hintStyle: Theme.of(context).textTheme.headlineSmall,
         focusedBorder: buildBorder(color: Theme.of(context).dividerColor),
         enabledBorder: buildBorder(color: Theme.of(context).dividerColor),

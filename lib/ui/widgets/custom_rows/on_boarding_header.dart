@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -30,7 +31,7 @@ class OnBoardingHeader extends StatelessWidget {
         ),
         TappedContainer(
           onTap: onIntroEnd,
-          text: AppLocalizations.of(context)!.skip,
+          text: 'skip'.tr(),
           hasIcon: false,
         ),
       ],
