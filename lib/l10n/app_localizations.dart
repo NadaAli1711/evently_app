@@ -152,12 +152,6 @@ abstract class AppLocalizations {
   /// **'Enter your email'**
   String get enter_your_email;
 
-  /// No description provided for @forget_password.
-  ///
-  /// In en, this message translates to:
-  /// **'Forget Password?'**
-  String get forget_password;
-
   /// No description provided for @enter_your_password.
   ///
   /// In en, this message translates to:
@@ -425,6 +419,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Skip'**
   String get skip;
+
+  /// No description provided for @forget_password.
+  ///
+  /// In en, this message translates to:
+  /// **'Forget Password'**
+  String get forget_password;
+
+  /// No description provided for @reset_password.
+  ///
+  /// In en, this message translates to:
+  /// **'Reset password'**
+  String get reset_password;
 
   /// No description provided for @search_for_event.
   ///

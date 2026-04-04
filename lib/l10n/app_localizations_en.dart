@@ -36,9 +36,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get enter_your_email => 'Enter your email';
 
   @override
-  String get forget_password => 'Forget Password?';
-
-  @override
   String get enter_your_password => 'Enter your password';
 
   @override
@@ -178,6 +175,12 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get skip => 'Skip';
+
+  @override
+  String get forget_password => 'Forget Password';
+
+  @override
+  String get reset_password => 'Reset password';
 
   @override
   String get search_for_event => 'Search for event';

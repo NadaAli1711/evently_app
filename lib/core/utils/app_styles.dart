@@ -33,6 +33,11 @@ class AppStyles {
     fontSize: 20,
     fontWeight: .w500,
   );
+  static const TextStyle mainText18Medium = TextStyle(
+    color: AppColors.mainText,
+    fontSize: 18,
+    fontWeight: .w500,
+  );
   static const TextStyle mainText16Medium = TextStyle(
     color: AppColors.mainText,
     fontSize: 16,
@@ -63,6 +68,11 @@ class AppStyles {
   static const TextStyle white20Medium = TextStyle(
     color: AppColors.white,
     fontSize: 20,
+    fontWeight: .w500,
+  );
+  static const TextStyle white18Medium = TextStyle(
+    color: AppColors.white,
+    fontSize: 18,
     fontWeight: .w500,
   );
   static const TextStyle mainBlue20SemiBold = TextStyle(

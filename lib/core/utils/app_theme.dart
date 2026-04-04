@@ -1,12 +1,13 @@
 import 'package:evently_app/core/utils/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'app_styles.dart';
 
 class AppTheme {
   static final ThemeData lightTheme = ThemeData(
     scaffoldBackgroundColor: AppColors.background,
-    textTheme: TextTheme(
+    textTheme: GoogleFonts.poppinsTextTheme(TextTheme(
       headlineLarge: AppStyles.mainColor24SemiBold,
       headlineMedium: AppStyles.mainText20SemiBold,
       headlineSmall: AppStyles.secText14Regular,
@@ -16,8 +17,9 @@ class AppTheme {
       bodyMedium: AppStyles.mainColor16Medium,
       bodyLarge: AppStyles.mainColor16SemiBold,
       titleLarge: AppStyles.mainText20Medium,
+      displayMedium: AppStyles.mainText18Medium,
       displayLarge: AppStyles.mainText20SemiBold,
-    ),
+    )),
     listTileTheme: ListTileThemeData(
       tileColor: AppColors.white,
       shape: RoundedRectangleBorder(
@@ -37,7 +39,7 @@ class AppTheme {
   );
   static final ThemeData darkTheme = ThemeData(
     scaffoldBackgroundColor: AppColors.bgDarkMode,
-    textTheme: TextTheme(
+    textTheme: GoogleFonts.poppinsTextTheme(TextTheme(
       headlineLarge: AppStyles.white24SemiBold,
       headlineMedium: AppStyles.white20SemiBold,
       headlineSmall: AppStyles.secTextDarkMode14Regular,
@@ -47,8 +49,9 @@ class AppTheme {
       bodyMedium: AppStyles.mainDarkMode16Medium,
       bodyLarge: AppStyles.mainDarkMode16SemiBold,
       titleLarge: AppStyles.white20Medium,
+      displayMedium: AppStyles.white18Medium,
       displayLarge: AppStyles.white20SemiBold,
-    ),
+    )),
     listTileTheme: ListTileThemeData(
       tileColor: AppColors.inputs,
       shape: RoundedRectangleBorder(
