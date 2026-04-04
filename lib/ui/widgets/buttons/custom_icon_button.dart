@@ -29,6 +29,6 @@ class _ArrowBackButtonState extends State<CustomIconButton> {
   }
 
   void goBack() {
-    Navigator.of(context);
+    Navigator.of(context).pop();
   }
 }

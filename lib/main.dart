@@ -52,7 +52,7 @@ class EventlyApp extends StatelessWidget {
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
       themeMode: themeProvider.themeMode,
-      initialRoute: AppRoutes.forgetPasswordScreen,
+      initialRoute: AppRoutes.loginScreen,
       routes: {
         AppRoutes.loginScreen : (context)=>LoginScreen(),
         AppRoutes.registerScreen : (context)=>RegisterScreen(),

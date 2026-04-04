@@ -33,7 +33,7 @@ class LoginScreen extends StatelessWidget {
               SizedBox(height: height*0.002,),
               CustomTextFormField(hintText: AppLocalizations.of(context)!.enter_your_email,prefixIcon: Icon(Icons.email_outlined),),
               CustomTextFormField(hintText: AppLocalizations.of(context)!.enter_your_password,prefixIcon: Icon(Icons.lock_outline),suffixIcon: Icon(Icons.visibility_off),),
-              Align(alignment: .centerRight,child: CustomTextButton(text: AppLocalizations.of(context)!.forget_password,onPressed: (){},)),
+              Align(alignment: .centerRight,child: CustomTextButton(text: AppLocalizations.of(context)!.forget_password,onPressed: (){Navigator.of(context).pushNamed(AppRoutes.forgetPasswordScreen);},)),
               SizedBox(height: height*0.01,),
               CustomElevatedButton(onPressed: (){}, child: Text(AppLocalizations.of(context)!.login)),
               Row(mainAxisAlignment: .center,children: [
