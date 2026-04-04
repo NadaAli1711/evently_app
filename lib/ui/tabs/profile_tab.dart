@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../core/utils/app_assets.dart';
@@ -35,7 +36,8 @@ class _ProfileTabState extends State<ProfileTab> {
         SizedBox(height: height * 0.02),
         ListTile(
           title: Text(
-            AppLocalizations.of(context)!.theme_mode,
+            'theme_mode'.tr(),
+            // AppLocalizations.of(context)!.theme_mode,
             style: Theme.of(context).textTheme.titleMedium,
           ),
           trailing: ProfileSwitch(),
@@ -43,7 +45,8 @@ class _ProfileTabState extends State<ProfileTab> {
 
         ListTile(
           title: Text(
-            AppLocalizations.of(context)!.language,
+            // AppLocalizations.of(context)!.language,
+            'language'.tr(),
             style: Theme.of(context).textTheme.titleMedium,
           ),
           trailing: IconButton(
@@ -60,7 +63,8 @@ class _ProfileTabState extends State<ProfileTab> {
         ),
         ListTile(
           title: Text(
-            AppLocalizations.of(context)!.logout,
+            // AppLocalizations.of(context)!.logout,
+            'logout'.tr(),
             style: Theme.of(context).textTheme.titleMedium,
           ),
           trailing: IconButton(

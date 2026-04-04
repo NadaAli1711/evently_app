@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:evently_app/core/utils/app_assets.dart';
 import 'package:evently_app/core/utils/app_styles.dart';
 import 'package:evently_app/l10n/app_localizations.dart';
@@ -29,7 +30,8 @@ class HomeTab extends StatelessWidget {
               spacing: height * 0.02,
               children: [
                 Text(
-                  AppLocalizations.of(context)!.welcome_back,
+                  'welcome_back'.tr(),
+                  // AppLocalizations.of(context)!.welcome_back,
                   style: Theme.of(context).textTheme.headlineSmall,
                 ),
                 Text(

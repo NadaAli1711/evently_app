@@ -14,7 +14,10 @@ class MainScreen extends StatefulWidget {
 
 class _ProfileScreenState extends State<MainScreen> {
   int selectedIndex = 0;
-  List<Widget> tabs = [HomeTab(),FavoriteTab(),ProfileTab()];
+  List<Widget> tabs = [
+    // HomeTab()
+    // ,FavoriteTab(),
+    ProfileTab()];
   @override
   Widget build(BuildContext context) {
 
