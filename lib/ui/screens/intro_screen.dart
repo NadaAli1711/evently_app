@@ -1,10 +1,10 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:evently_app/core/utils/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../core/utils/app_assets.dart';
 import '../../core/utils/app_context.dart';
-import '../../l10n/app_localizations.dart';
 import '../../providers/theme_provider.dart';
 import '../widgets/introduction_body.dart';
 
@@ -30,13 +30,9 @@ class IntroScreen extends StatelessWidget {
               ),
               IntroductionBody(
                 currentIndex: 0,
-                buttonText: AppLocalizations.of(context)!.let_s_start,
-                firstText: AppLocalizations.of(
-                  context,
-                )!.personalize_your_experience,
-                secondText: AppLocalizations.of(
-                  context,
-                )!.choose_your_preferred_theme_and_language_to_get_started_with_a_comfortable_tailored_experience_that_suits_your_style,
+                buttonText: 'let_s_start'.tr(),
+                firstText:'personalize_your_experience'.tr(),
+                secondText: 'choose_your_preferred_theme_and_language_to_get_started_with_a_comfortable_tailored_experience_that_suits_your_style'.tr(),
                 darkAssetName: AppImages.beingCreativeDark,
                 lightAssetName: AppImages.beingCreative,
                 isIntroScreen: true,

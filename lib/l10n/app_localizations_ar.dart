@@ -36,9 +36,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String get enter_your_email => 'أدخل بريدك الإلكتروني';
 
   @override
-  String get forget_password => 'نسيت كلمة السر؟';
-
-  @override
   String get enter_your_password => 'أدخل كلمة السر';
 
   @override
@@ -178,6 +175,12 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get skip => 'تخطي';
+
+  @override
+  String get forget_password => 'نسيت كلمة السر';
+
+  @override
+  String get reset_password => 'اعاده تعيين كلمه السر';
 
   @override
   String get search_for_event => 'البحث عن فعالية';

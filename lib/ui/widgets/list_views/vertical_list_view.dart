@@ -1,28 +1,12 @@
-import 'package:evently_app/core/utils/app_assets.dart';
 import 'package:evently_app/core/utils/app_context.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
+import '../../../core/utils/list_utils.dart';
 import '../../../providers/theme_provider.dart';
 import '../containers/custom_container.dart';
 
 class VerticalListView extends StatefulWidget {
-  final List<String> darkImagesList = [
-    AppImages.sportDark,
-    AppImages.birthdayDark,
-    AppImages.meetingDark,
-    AppImages.exhibitionDark,
-    AppImages.bookClubDark,
-  ];
-  final List<String> lightImagesList = [
-    AppImages.sportLight,
-    AppImages.birthdayLight,
-    AppImages.meetingLight,
-    AppImages.exhibitionLight,
-    AppImages.bookClubLight,
-  ];
-
-  VerticalListView({super.key});
+  const VerticalListView({super.key});
 
   @override
   State<VerticalListView> createState() => _VerticalListViewState();
@@ -35,10 +19,11 @@ class _VerticalListViewState extends State<VerticalListView> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    isFavorite = List.generate(widget.darkImagesList.length, (index) => false,);
+    isFavorite = List.generate(
+      ListUtils.darkImagesList.length,
+      (index) => false,
+    );
   }
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -46,20 +31,15 @@ class _VerticalListViewState extends State<VerticalListView> {
     double width = context.width;
     var themeProvider = Provider.of<ThemeProvider>(context);
     return ListView.separated(
-      itemBuilder: (context, index) =>
-      CustomContainer(
-        image: DecorationImage(
-          image: AssetImage(
-            themeProvider.isDark
-                ? widget.darkImagesList[index]
-                : widget.lightImagesList[index],
-          ),
-          fit: BoxFit.fill,
-        ),
+      itemBuilder: (context, index) => CustomContainer(
+        image: themeProvider.isDark
+            ? ListUtils.darkImagesList[index]
+            : ListUtils.lightImagesList[index],
+
         hasBackgroundImage: true,
         borderRadius: 16,
-        horizontalPadding:  width * 0.02,
-        verticalPadding:  height * 0.02,
+        horizontalPadding: width * 0.02,
+        verticalPadding: height * 0.02,
         containerHeight: height * 0.23,
         child: Column(
           mainAxisAlignment: .spaceBetween,
@@ -83,13 +63,13 @@ class _VerticalListViewState extends State<VerticalListView> {
                   ),
                   IconButton(
                     onPressed: () {
-                      isFavorite[index] = !isFavorite[index] ;
-                      setState(() {
-
-                      });
+                      isFavorite[index] = !isFavorite[index];
+                      setState(() {});
                     },
                     icon: Icon(
-                      isFavorite[index] ? Icons.favorite:Icons.favorite_border_outlined,
+                      isFavorite[index]
+                          ? Icons.favorite
+                          : Icons.favorite_border_outlined,
                       color: Theme.of(context).cardColor,
                     ),
                   ),
@@ -101,7 +81,7 @@ class _VerticalListViewState extends State<VerticalListView> {
       ),
 
       separatorBuilder: (context, index) => SizedBox(height: height * 0.02),
-      itemCount: widget.darkImagesList.length,
+      itemCount: ListUtils.darkImagesList.length,
     );
   }
 }

@@ -8,7 +8,7 @@
   "light": "فاتح",
   "login_to_your_account": "تسجيل الدخول إلى حسابك",
   "enter_your_email": "أدخل بريدك الإلكتروني",
-  "forget_password": "نسيت كلمة السر؟",
+  "forget_password": "نسيت كلمة السر",
   "enter_your_password": "أدخل كلمة السر",
   "or": "أو",
   "login_with_google": "تسجيل الدخول بواسطة جوجل",
@@ -53,6 +53,7 @@
   "next": "التالي",
   "theme": "المظهر",
   "skip":"تخطي",
+  "reset_password":"اعاده تعيين كلمه السر",
   "search_for_event": "البحث عن فعالية",
   "get_started": "ابدأ الآن"
 }

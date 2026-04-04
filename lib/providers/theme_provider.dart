@@ -6,7 +6,6 @@ class ThemeProvider extends ChangeNotifier{
   ThemeMode themeMode = ThemeMode.dark;
   void changeTheme(ThemeMode newThemeMode){
 
-    // context.setLocale(Locale(newLanguageCode));
     if(newThemeMode == themeMode){
       return;
     }

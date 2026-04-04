@@ -35,6 +35,8 @@ class AppImages{
   static const String unSelectedHome = 'assets/images/unselected_home_icon.png';
   static const String unSelectedHeart = 'assets/images/unslected_heart_icon.png';
   static const String selectedHeart = 'assets/images/selected_heart_icon.png';
+  static const String forgetPasswordDark = 'assets/images/forget_password_dark.png';
+  static const String forgetPasswordLight = 'assets/images/forget_password_light.png';
 
 
 }

@@ -1,4 +1,4 @@
-import 'package:evently_app/l10n/app_localizations.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import 'language_list_tile.dart';
@@ -12,8 +12,8 @@ class LanguageBottomSheet extends StatelessWidget {
     return Column(
       crossAxisAlignment: .start,
       children: [
-        LanguageListTile(language: 'en',text: AppLocalizations.of(context)!.english,),
-        LanguageListTile(language: 'ar',text: AppLocalizations.of(context)!.arabic,),
+        LanguageListTile(language: 'en',text: 'english'.tr(),),
+        LanguageListTile(language: 'ar',text: 'arabic'.tr(),),
       ],
     );
   }
