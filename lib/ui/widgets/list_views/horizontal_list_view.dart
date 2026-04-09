@@ -5,7 +5,12 @@ import '../../../core/utils/app_context.dart';
 import '../../../core/utils/list_utils.dart';
 
 class HorizontalListView extends StatefulWidget {
-  const HorizontalListView({super.key});
+  final Function(int)? onCategoryChanged;
+  final List<String> categoryList;
+  final List<String> iconsList;
+  const HorizontalListView({super.key, this.onCategoryChanged
+    ,required this.categoryList
+    ,required this.iconsList});
 
   @override
   State<HorizontalListView> createState() => _HorizontalListViewState();
@@ -27,13 +32,14 @@ class _HorizontalListViewState extends State<HorizontalListView> {
           onTap: () {
             selectedIndex = index;
             setState(() {});
+            widget.onCategoryChanged?.call(selectedIndex);
           },
           isSelected: index == selectedIndex,
-          iconName: ListUtils.itemIconsList[index],
-          text: ListUtils.itemList[index],
+          iconName: widget.iconsList[index],
+          text: widget.categoryList[index],
         ),
         separatorBuilder: (context, index) => SizedBox(width: width * 0.02),
-        itemCount: ListUtils.itemList.length,
+        itemCount: widget.categoryList.length,
       ),
     );
   }

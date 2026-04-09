@@ -1,4 +1,5 @@
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:evently_app/core/utils/app_routes.dart';
 import 'package:evently_app/providers/theme_provider.dart';
@@ -11,11 +12,17 @@ import 'package:evently_app/ui/screens/on_boarding_screen.dart';
 import 'package:evently_app/ui/screens/register_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
 import 'core/utils/app_theme.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  // await FirebaseFirestore.instance.disableNetwork();
   await EasyLocalization.ensureInitialized();
 
   runApp(

@@ -42,6 +42,8 @@ dependencies:
   intl: any
   introduction_screen: ^4.0.0
   google_fonts: ^8.0.2
+  firebase_core: ^4.6.0
+  cloud_firestore: ^6.2.0
 
 dev_dependencies:
   flutter_test:

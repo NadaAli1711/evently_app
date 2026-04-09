@@ -38,24 +38,24 @@ class RegisterScreen extends StatelessWidget {
                 style: Theme.of(context).textTheme.headlineLarge,
               ),
               SizedBox(height: height * 0.002),
-              CustomTextFormField(
-                hintText: 'enter_your_name'.tr(),
-                prefixIcon: Icon(Icons.person_outline),
-              ),
-              CustomTextFormField(
-                hintText: 'enter_your_email'.tr(),
-                prefixIcon: Icon(Icons.email_outlined),
-              ),
-              CustomTextFormField(
-                hintText: 'enter_your_password'.tr(),
-                prefixIcon: Icon(Icons.lock_outline),
-                suffixIcon: Icon(Icons.visibility_off),
-              ),
-              CustomTextFormField(
-                hintText: 'confirm_your_password'.tr(),
-                prefixIcon: Icon(Icons.lock_outline),
-                suffixIcon: Icon(Icons.visibility_off),
-              ),
+              // CustomTextFormField(
+              //   hintText: 'enter_your_name'.tr(),
+              //   prefixIcon: Icon(Icons.person_outline),
+              // ),
+              // CustomTextFormField(
+              //   hintText: 'enter_your_email'.tr(),
+              //   prefixIcon: Icon(Icons.email_outlined),
+              // ),
+              // CustomTextFormField(
+              //   hintText: 'enter_your_password'.tr(),
+              //   prefixIcon: Icon(Icons.lock_outline),
+              //   suffixIcon: Icon(Icons.visibility_off),
+              // ),
+              // CustomTextFormField(
+              //   hintText: 'confirm_your_password'.tr(),
+              //   prefixIcon: Icon(Icons.lock_outline),
+              //   suffixIcon: Icon(Icons.visibility_off),
+              // ),
 
               SizedBox(height: height * 0.01),
               CustomElevatedButton(

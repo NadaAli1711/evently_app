@@ -1,12 +1,16 @@
+import 'package:easy_localization/easy_localization.dart';
+import 'package:evently_app/core/models/event.dart';
 import 'package:evently_app/core/utils/app_context.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import '../../../core/utils/list_utils.dart';
-import '../../../providers/theme_provider.dart';
+// import 'package:provider/provider.dart';
+import '../../../core/utils/firebase_utils.dart';
+// import '../../../core/utils/list_utils.dart';
+// import '../../../providers/theme_provider.dart';
 import '../containers/custom_container.dart';
 
 class VerticalListView extends StatefulWidget {
-  const VerticalListView({super.key});
+  final List<Event> eventsList;
+  const VerticalListView({super.key,required this.eventsList});
 
   @override
   State<VerticalListView> createState() => _VerticalListViewState();
@@ -14,28 +18,18 @@ class VerticalListView extends StatefulWidget {
 
 class _VerticalListViewState extends State<VerticalListView> {
   int selectedIndex = 0;
-  late List<bool> isFavorite;
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    isFavorite = List.generate(
-      ListUtils.darkImagesList.length,
-      (index) => false,
-    );
-  }
+
 
   @override
   Widget build(BuildContext context) {
     double height = context.height;
     double width = context.width;
-    var themeProvider = Provider.of<ThemeProvider>(context);
+    // var themeProvider = Provider.of<ThemeProvider>(context);
     return ListView.separated(
-      itemBuilder: (context, index) => CustomContainer(
-        image: themeProvider.isDark
-            ? ListUtils.darkImagesList[index]
-            : ListUtils.lightImagesList[index],
-
+      itemBuilder: (context, index) {
+        Event currentEvent = widget.eventsList[index];
+        return CustomContainer(
+        image: currentEvent.imageName,
         hasBackgroundImage: true,
         borderRadius: 16,
         horizontalPadding: width * 0.02,
@@ -48,7 +42,7 @@ class _VerticalListViewState extends State<VerticalListView> {
             CustomContainer(
               containerHeight: height * 0.05,
               child: Text(
-                '21 Jan',
+                '${ DateFormat('d MMM').format(currentEvent.eventDate!)}',
                 style: Theme.of(context).textTheme.bodyLarge,
               ),
             ),
@@ -58,16 +52,15 @@ class _VerticalListViewState extends State<VerticalListView> {
                 mainAxisAlignment: .spaceBetween,
                 children: [
                   Text(
-                    'This is a Birthday Party ',
+                    '${currentEvent.description}',
                     style: Theme.of(context).textTheme.bodyLarge,
                   ),
                   IconButton(
                     onPressed: () {
-                      isFavorite[index] = !isFavorite[index];
-                      setState(() {});
+                      FirebaseUtils.updateFavorite(currentEvent);
                     },
                     icon: Icon(
-                      isFavorite[index]
+                      currentEvent.isFavorite
                           ? Icons.favorite
                           : Icons.favorite_border_outlined,
                       color: Theme.of(context).cardColor,
@@ -78,10 +71,10 @@ class _VerticalListViewState extends State<VerticalListView> {
             ),
           ],
         ),
-      ),
+      );},
 
       separatorBuilder: (context, index) => SizedBox(height: height * 0.02),
-      itemCount: ListUtils.darkImagesList.length,
+      itemCount: widget.eventsList.length,
     );
   }
 }

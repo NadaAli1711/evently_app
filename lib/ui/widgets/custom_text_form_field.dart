@@ -9,9 +9,11 @@ class CustomTextFormField extends StatelessWidget {
   final Color prefixIconColor;
   final int? minLines;
   final int? maxLines;
+  final TextEditingController controller;
   const CustomTextFormField({
     super.key,
     required this.hintText,
+    required this.controller,
     this.prefixIcon,
     this.suffixIcon,
     this.suffixIconColor = AppColors.disable,
@@ -23,6 +25,7 @@ class CustomTextFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: controller,
       minLines: minLines,
       maxLines:
           null, // to expand as you like and prevent the error when min lines is larger than the default of max lines which is 1 so null is larger than any value
