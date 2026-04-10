@@ -7,7 +7,8 @@ class DateTimeRow extends StatelessWidget {
   final IconData? icon;
   final String titleText;
   final String buttonText;
-  const DateTimeRow({super.key,required this.icon,required this.titleText,required this.buttonText});
+  final VoidCallback onPressed;
+  const DateTimeRow({super.key,required this.icon,required this.titleText,required this.buttonText,required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +18,7 @@ class DateTimeRow extends StatelessWidget {
       Icon(icon,color: Theme.of(context).cardColor,),
       Text(titleText,style: Theme.of(context).textTheme.titleMedium,),
       Spacer(),
-      CustomTextButton(onPressed: (){},text: buttonText,)
+      CustomTextButton(onPressed: onPressed,text: buttonText,)
 
     ],);
   }

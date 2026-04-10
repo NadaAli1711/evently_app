@@ -15,40 +15,49 @@ import '../widgets/custom_rows/date_time_row.dart';
 import '../widgets/custom_text_form_field.dart';
 import '../widgets/list_views/horizontal_list_view.dart';
 
-class AddEventScreen extends StatefulWidget {
-  const AddEventScreen({super.key});
+class EditEventScreen extends StatefulWidget {
+  const EditEventScreen({super.key});
 
   @override
-  State<AddEventScreen> createState() => _AddEventScreenState();
+  State<EditEventScreen> createState() => _EditEventScreenState();
 }
 
-class _AddEventScreenState extends State<AddEventScreen> {
+class _EditEventScreenState extends State<EditEventScreen> {
   final TextEditingController descriptionController = TextEditingController();
   final TextEditingController titleController = TextEditingController();
   var formKey = GlobalKey<FormState>();
 
-  String selectedCategoryName = ListUtils.getDetailsCategoryList()[0];
-  late String selectedImageName;
-  int selectedIndex = 0;
+  String? selectedCategoryName;
+  String? selectedImageName;
+  int? selectedIndex;
   DateTime? selectedEventDate;
-  TimeOfDay? selectedEventTime;
   String? formattedTime;
 
+  bool isInitialized = false;
   @override
-  void initState() {
-    super.initState();
-    var themeProvider = Provider.of<ThemeProvider>(context, listen: false);
-    _updateImage(themeProvider, 0);
-  }
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if (!isInitialized) {
+      var event = ModalRoute.of(context)!.settings.arguments as Event;
 
-  void _updateImage(ThemeProvider themeProvider, int index) {
-    selectedImageName = themeProvider.isDark
-        ? ListUtils.darkImagesList[index]
-        : ListUtils.lightImagesList[index];
+      titleController.text = event.title;
+      descriptionController.text = event.description;
+
+      selectedCategoryName = event.eventName;
+      selectedImageName = event.imageName;
+      selectedEventDate = event.eventDate;
+      formattedTime = event.eventTime;
+
+      selectedIndex = ListUtils.getDetailsCategoryList().indexOf(event.eventName);
+      if (selectedIndex == -1) selectedIndex = 0;
+
+      isInitialized = true;
+    }
   }
 
   @override
   Widget build(BuildContext context) {
+    var event = ModalRoute.of(context)!.settings.arguments as Event;
     var userProvider = Provider.of<UserProvider>(context);
     var themeProvider = Provider.of<ThemeProvider>(context);
 
@@ -65,97 +74,86 @@ class _AddEventScreenState extends State<AddEventScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  CustomHeader(headerText: 'add_event'.tr()),
-                  SizedBox(height: height * 0.01),
+                  CustomHeader(headerText: 'edit_event'.tr()),
+                  SizedBox(height: height * 0.02),
 
                   CustomContainer(
                     borderRadius: 24,
                     containerHeight: height * 0.23,
-                    image: selectedImageName,
+                    image: selectedImageName!,
                     hasBackgroundImage: true,
                   ),
 
-                  SizedBox(height: height * 0.01),
+                  SizedBox(height: height * 0.02),
 
                   HorizontalListView(
+                    initialIndex: selectedIndex,
                     iconsList: ListUtils.getDetailsIcons(),
                     categoryList: ListUtils.getDetailsCategoryList(),
                     onCategoryChanged: (index) {
                       setState(() {
                         selectedIndex = index;
-                        selectedCategoryName = ListUtils.getDetailsCategoryList()[selectedIndex];
+                        selectedCategoryName = ListUtils.getDetailsCategoryList()[selectedIndex!];
 
-                        _updateImage(themeProvider, index);
+                        selectedImageName = themeProvider.isDark
+                            ? ListUtils.darkImagesList[selectedIndex!]
+                            : ListUtils.lightImagesList[selectedIndex!];
                       });
                     },
                   ),
 
-                  SizedBox(height: height * 0.02),
                   Text('title'.tr(), style: Theme.of(context).textTheme.titleMedium),
                   CustomTextFormField(
                     controller: titleController,
-                    hintText: 'event_title'.tr(),
-                    validator: (value) {
-                      if (value == null || value.isEmpty) return 'title_required'.tr();
-                      return null;
-                    },
+                    hintText: 'enter_event_title'.tr(),
                   ),
 
-                  SizedBox(height: height * 0.02),
                   Text('description'.tr(), style: Theme.of(context).textTheme.titleMedium),
                   CustomTextFormField(
                     controller: descriptionController,
-                    hintText: 'event_description'.tr(),
+                    hintText: 'enter_event_description'.tr(),
                     minLines: 4,
-                    validator: (value) {
-                      if (value == null || value.isEmpty) return 'desc_required'.tr();
-                      return null;
-                    },
                   ),
 
-                  SizedBox(height: height * 0.02),
                   DateTimeRow(
                     icon: Icons.date_range,
-                    buttonText: selectedEventDate == null
-                        ? 'choose_date'.tr()
-                        : DateFormat('dd/MM/yyyy').format(selectedEventDate!),
+                    buttonText: DateFormat('dd/MM/yyyy').format(selectedEventDate!),
                     titleText: 'event_date'.tr(),
                     onPressed: () => chooseEventDate(context),
                   ),
 
                   DateTimeRow(
                     icon: Icons.access_time_rounded,
-                    buttonText: formattedTime ?? 'choose_time'.tr(),
+                    buttonText: formattedTime!,
                     titleText: 'event_time'.tr(),
                     onPressed: () => chooseEventTime(context),
                   ),
 
-                  SizedBox(height: height * 0.03),
+                  SizedBox(height: height * 0.02),
 
                   CustomElevatedButton(
                     onPressed: () {
                       if (formKey.currentState?.validate() == true) {
-                        if (selectedEventDate == null || formattedTime == null) {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(content: Text("please_select_date_and_time".tr())),
-                          );
-                          return;
-                        }
+                        Event updatedEvent = Event(
+                          id: event.id,
+                          title: titleController.text,
+                          description: descriptionController.text,
+                          eventDate: selectedEventDate!,
+                          eventTime: formattedTime!,
+                          eventName: selectedCategoryName!,
+                          imageName: selectedImageName!,
+                          isFavorite: event.isFavorite,
+                        );
 
-                        FirebaseUtils.addEvent(
-                          uId: userProvider.currentUser!.uId,
-                          event: Event(
-                            title: titleController.text,
-                            description: descriptionController.text,
-                            eventDate: selectedEventDate!,
-                            eventTime: formattedTime!,
-                            eventName: selectedCategoryName,
-                            imageName: selectedImageName,
-                          ),
-                        ).then((value) => Navigator.pop(context));
+                        FirebaseUtils.editEvent(
+                            userProvider.currentUser!.uId,
+                            updatedEvent
+                        ).then((value) {
+                          Navigator.pop(context);
+                        });
                       }
                     },
-                    child: Text('add_event'.tr()),
+                    child: Text('update_event'.tr()),
                   ),
                   SizedBox(height: height * 0.02),
                 ],
@@ -166,11 +164,10 @@ class _AddEventScreenState extends State<AddEventScreen> {
       ),
     );
   }
-
   Future<void> chooseEventDate(BuildContext context) async {
-    DateTime? date = await showDatePicker(
+    var date = await showDatePicker(
       context: context,
-      initialDate: DateTime.now(),
+      initialDate: selectedEventDate!,
       firstDate: DateTime.now(),
       lastDate: DateTime.now().add(const Duration(days: 365)),
     );
@@ -182,13 +179,12 @@ class _AddEventScreenState extends State<AddEventScreen> {
   }
 
   Future<void> chooseEventTime(BuildContext context) async {
-    TimeOfDay? time = await showTimePicker(
+    var time = await showTimePicker(
       context: context,
       initialTime: TimeOfDay.now(),
     );
     if (time != null) {
       setState(() {
-        selectedEventTime = time;
         formattedTime = time.format(context);
       });
     }

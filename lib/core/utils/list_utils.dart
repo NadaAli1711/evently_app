@@ -16,15 +16,21 @@ class ListUtils {
     AppImages.exhibitionLight,
     AppImages.bookClubLight,
   ];
- static List<String> itemList = [
-    'all'.tr(),
-    'sport'.tr(),
-    'birthday'.tr(),
-    'meeting'.tr(),
-    'exhibition'.tr(),
-    'book_club'.tr(),
-  ];
- static final List<String> itemIconsList = [
+  static List<String> getHomeCategoryList() {
+    return ['all'.tr(), ...getDetailsCategoryList()];
+  }
+
+  static List<String> getDetailsCategoryList() {
+    return [
+      'sport'.tr(),
+      'birthday'.tr(),
+      'meeting'.tr(),
+      'exhibition'.tr(),
+      'book_club'.tr(),
+    ];
+  }
+
+  static final List<String> itemIconsList = [
     AppImages.squars,
     AppImages.bike,
     AppImages.birthdayCake,
@@ -32,5 +38,19 @@ class ListUtils {
     AppImages.book,
     AppImages.book,
   ];
+  static final List<String> _baseIcons = [
+    AppImages.bike,
+    AppImages.birthdayCake,
+    AppImages.book,
+    AppImages.book,
+    AppImages.book,
+  ];
 
+  static List<String> getHomeIcons() {
+    return [AppImages.squars, ..._baseIcons];
+  }
+
+  static List<String> getDetailsIcons() {
+    return _baseIcons;
+  }
 }

@@ -55,5 +55,6 @@
   "skip":"تخطي",
   "reset_password":"اعاده تعيين كلمه السر",
   "search_for_event": "البحث عن فعالية",
-  "get_started": "ابدأ الآن"
+  "get_started": "ابدأ الآن",
+  "no_data_found":"لا يوجد بيانات"
 }

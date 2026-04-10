@@ -1,12 +1,11 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:evently_app/core/utils/app_context.dart';
-import 'package:evently_app/l10n/app_localizations.dart';
+import 'package:evently_app/ui/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import '../../core/utils/app_assets.dart';
 import '../widgets/custom_rows/on_boarding_header.dart';
 import '../widgets/introduction_body.dart';
-import 'main_screen.dart';
 
 class OnBoardingScreen extends StatefulWidget {
   const OnBoardingScreen({super.key});
@@ -22,7 +21,7 @@ class OnBoardingPageState extends State<OnBoardingScreen> {
   void onIntroEnd() {
     Navigator.of(
       context,
-    ).pushReplacement(MaterialPageRoute(builder: (_) => const MainScreen()));
+    ).pushReplacement(MaterialPageRoute(builder: (_) => const LoginScreen()));
   }
 
   void _toNextPage() {
@@ -104,7 +103,7 @@ class OnBoardingPageState extends State<OnBoardingScreen> {
 
 
       decoration: PageDecoration(
-        bodyPadding: EdgeInsets.only(top: context.height * 0.02,bottom: 0,),
+        bodyPadding: EdgeInsets.only(top: context.height * 0.01,bottom: 0,),
       ),
     );
   }
