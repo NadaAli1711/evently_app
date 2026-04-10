@@ -1,9 +1,10 @@
-
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:evently_app/core/utils/app_routes.dart';
 import 'package:evently_app/providers/theme_provider.dart';
+import 'package:evently_app/providers/user_provider.dart';
 import 'package:evently_app/ui/screens/add_event_screen.dart';
+import 'package:evently_app/ui/screens/edit_event_screen.dart';
+import 'package:evently_app/ui/screens/event_details_screen.dart';
 import 'package:evently_app/ui/screens/forget_password_screen.dart';
 import 'package:evently_app/ui/screens/intro_screen.dart';
 import 'package:evently_app/ui/screens/login_screen.dart';
@@ -19,25 +20,27 @@ import 'core/utils/app_theme.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   // await FirebaseFirestore.instance.disableNetwork();
   await EasyLocalization.ensureInitialized();
 
   runApp(
     EasyLocalization(
-        supportedLocales: [Locale('en'), Locale('ar')],
-        path: 'assets/translations',
-        fallbackLocale: Locale('en'),
-        child: MultiProvider(
-          providers: [
-            ChangeNotifierProvider(
-              create: (BuildContext context) => ThemeProvider(),
-            ),
-          ],
-          child: EventlyApp(),
-        )),
+      supportedLocales: [Locale('en'), Locale('ar')],
+      path: 'assets/translations',
+      fallbackLocale: Locale('en'),
+      child: MultiProvider(
+        providers: [
+          ChangeNotifierProvider(
+            create: (BuildContext context) => ThemeProvider(),
+          ),
+          ChangeNotifierProvider(
+            create: (BuildContext context) => UserProvider(),
+          ),
+        ],
+        child: EventlyApp(),
+      ),
+    ),
   );
 }
 
@@ -55,7 +58,7 @@ class EventlyApp extends StatelessWidget {
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
       themeMode: themeProvider.themeMode,
-      initialRoute: AppRoutes.mainScreen,
+      initialRoute: AppRoutes.introScreen,
       routes: {
         AppRoutes.loginScreen: (context) => LoginScreen(),
         AppRoutes.registerScreen: (context) => RegisterScreen(),
@@ -64,6 +67,8 @@ class EventlyApp extends StatelessWidget {
         AppRoutes.introScreen: (context) => IntroScreen(),
         AppRoutes.forgetPasswordScreen: (context) => ForgetPasswordScreen(),
         AppRoutes.addEventScreen: (context) => AddEventScreen(),
+        AppRoutes.eventDetailsScreen: (context) => EventDetailsScreen(),
+        AppRoutes.editEventScreen: (context) => EditEventScreen(),
       },
     );
   }

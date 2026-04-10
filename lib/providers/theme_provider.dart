@@ -1,9 +1,8 @@
 
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class ThemeProvider extends ChangeNotifier{
-  ThemeMode themeMode = ThemeMode.dark;
+  ThemeMode themeMode = ThemeMode.light;
   void changeTheme(ThemeMode newThemeMode){
 
     if(newThemeMode == themeMode){

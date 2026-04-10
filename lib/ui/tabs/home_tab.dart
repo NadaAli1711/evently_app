@@ -6,8 +6,9 @@ import 'package:evently_app/providers/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../core/utils/app_context.dart';
-import '../../core/utils/firebase_utils.dart';
+import '../../core/utils/firebase_utils/firebase_utils.dart';
 import '../../core/utils/list_utils.dart';
+import '../../providers/user_provider.dart';
 import '../widgets/buttons/custom_elevated_button.dart';
 import '../widgets/event_stream_builder.dart';
 import '../widgets/list_views/horizontal_list_view.dart';
@@ -26,6 +27,7 @@ class _HomeTabState extends State<HomeTab> {
     double height = context.height;
     double width = context.width;
     var themeProvider = Provider.of<ThemeProvider>(context);
+    var userProvider = Provider.of<UserProvider>(context);
     return Column(
       spacing: height * 0.025,
       children: [
@@ -40,7 +42,7 @@ class _HomeTabState extends State<HomeTab> {
                   style: Theme.of(context).textTheme.headlineSmall,
                 ),
                 Text(
-                  'John Safwat',
+                  Provider.of<UserProvider>(context).currentUser!.name,
                   style: Theme.of(context).textTheme.titleLarge,
                 ),
               ],
@@ -79,7 +81,7 @@ class _HomeTabState extends State<HomeTab> {
             });
           },
         ),
-        EventStreamBuilder(stream: FirebaseUtils.getEvents(categoryName: selectedCategory),)
+        EventStreamBuilder(stream: FirebaseUtils.getEvents(uId:userProvider.currentUser!.uId,categoryName: selectedCategory),)
       ],
     );
   }

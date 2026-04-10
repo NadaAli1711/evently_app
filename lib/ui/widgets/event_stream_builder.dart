@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../../core/models/event.dart';
@@ -16,11 +17,11 @@ class EventStreamBuilder extends StatelessWidget {
         builder: (context, snapshot) {
           if (snapshot.hasError) return Text('Error');
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return Center(child: CircularProgressIndicator());
+            return Center(child: CircularProgressIndicator(color: Theme.of(context).cardColor,));
           }
           var eventsList =
               snapshot.data?.docs.map((doc) => doc.data()).toList() ?? [];
-          return eventsList.isEmpty? Text('No Data Found'): VerticalListView(eventsList: eventsList);
+          return eventsList.isEmpty? Center(child: Text('no_data_found'.tr(),style: Theme.of(context).textTheme.bodySmall,)): VerticalListView(eventsList: eventsList);
         },
       ),
     );

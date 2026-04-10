@@ -55,6 +55,7 @@
   "forget_password":"Forget Password",
   "reset_password":"Reset password",
   "search_for_event":"Search for event",
-  "get_started":"Get started"
+  "get_started":"Get started",
+  "no_data_found":"No Data Found"
 
 }
